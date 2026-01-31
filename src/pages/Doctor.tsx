@@ -3,7 +3,7 @@ import StatusSection from '../components/StatusSection';
 
 export default function Doctor() {
     return (
-        <main className="pt-20 min-h-screen bg-white">
+        <main className="pt-20 min-h-screen bg-white page-transition">
             <DoctorSection />
             <StatusSection />
         </main>

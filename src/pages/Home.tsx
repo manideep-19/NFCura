@@ -17,7 +17,7 @@ export default function Home() {
     };
 
     return (
-        <main>
+        <main className="page-transition">
             <Hero onExplore={scrollToExplore} />
             <RoleBasedEntry />
             <CoreDifferentiator />

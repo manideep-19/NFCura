@@ -1,10 +1,38 @@
 import { Activity, Linkedin, Twitter, Github } from 'lucide-react';
+import { useReveal } from '../hooks/useReveal';
 
 export default function Footer() {
+  const [footerRef, isVisible] = useReveal<HTMLElement>({ threshold: 0.1 });
+
+  const platformLinks = [
+    { name: "Prescription Cloud", href: "#" },
+    { name: "Identity Verification", href: "#" },
+    { name: "Pharmacy & Lab Network", href: "#" },
+    { name: "API Documentation", href: "#" }
+  ];
+
+  const companyLinks = [
+    { name: "About", href: "#" },
+    { name: "Security", href: "#" },
+    { name: "Compliance", href: "#" },
+    { name: "Contact", href: "#" }
+  ];
+
+  const legalLinks = [
+    { name: "Privacy Policy", href: "#" },
+    { name: "Terms of Service", href: "#" },
+    { name: "BAA Agreement", href: "#" },
+    { name: "Status", href: "#" }
+  ];
+
   return (
-    <footer className="bg-slate-950 text-slate-400 py-16 px-6">
+    <footer ref={footerRef} className="bg-slate-950 text-slate-400 py-16 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 mb-12">
-        <div className="col-span-1 md:col-span-1">
+
+        {/* Brand Column */}
+        <div
+          className={`col-span-1 md:col-span-1 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+        >
           <div className="flex items-center gap-2 mb-6">
             <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
               <Activity className="w-5 h-5 text-white" />
@@ -15,46 +43,86 @@ export default function Footer() {
             The enterprise standard for secure, interoperable healthcare prescription management and delivery.
           </p>
           <div className="flex gap-4">
-            <a href="#" className="hover:text-white transition-colors"><Twitter className="w-5 h-5" /></a>
-            <a href="#" className="hover:text-white transition-colors"><Linkedin className="w-5 h-5" /></a>
-            <a href="#" className="hover:text-white transition-colors"><Github className="w-5 h-5" /></a>
+            {[Twitter, Linkedin, Github].map((Icon, i) => (
+              <a
+                key={i}
+                href="#"
+                className={`hover:text-white transition-all duration-300 hover:scale-110 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+                style={{ transitionDelay: `${300 + i * 100}ms` }}
+              >
+                <Icon className="w-5 h-5" />
+              </a>
+            ))}
           </div>
         </div>
 
-        <div>
+        {/* Platform Links */}
+        <div
+          className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          style={{ transitionDelay: '100ms' }}
+        >
           <h4 className="text-white font-semibold mb-6">Platform</h4>
           <ul className="space-y-4 text-sm">
-            <li><a href="#" className="hover:text-blue-400 transition-colors">Prescription Cloud</a></li>
-            <li><a href="#" className="hover:text-blue-400 transition-colors">Identity Verification</a></li>
-            <li><a href="#" className="hover:text-blue-400 transition-colors">Pharmacy & Lab Network</a></li>
-            <li><a href="#" className="hover:text-blue-400 transition-colors">API Documentation</a></li>
+            {platformLinks.map((link, i) => (
+              <li
+                key={i}
+                className={`transition-all duration-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}
+                style={{ transitionDelay: `${200 + i * 50}ms` }}
+              >
+                <a href={link.href} className="hover:text-blue-400 transition-colors duration-300">{link.name}</a>
+              </li>
+            ))}
           </ul>
         </div>
 
-        <div>
+        {/* Company Links */}
+        <div
+          className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          style={{ transitionDelay: '200ms' }}
+        >
           <h4 className="text-white font-semibold mb-6">Company</h4>
           <ul className="space-y-4 text-sm">
-            <li><a href="#" className="hover:text-blue-400 transition-colors">About</a></li>
-            <li><a href="#" className="hover:text-blue-400 transition-colors">Security</a></li>
-            <li><a href="#" className="hover:text-blue-400 transition-colors">Compliance</a></li>
-            <li><a href="#" className="hover:text-blue-400 transition-colors">Contact</a></li>
+            {companyLinks.map((link, i) => (
+              <li
+                key={i}
+                className={`transition-all duration-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}
+                style={{ transitionDelay: `${300 + i * 50}ms` }}
+              >
+                <a href={link.href} className="hover:text-blue-400 transition-colors duration-300">{link.name}</a>
+              </li>
+            ))}
           </ul>
         </div>
 
-        <div>
+        {/* Legal Links */}
+        <div
+          className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          style={{ transitionDelay: '300ms' }}
+        >
           <h4 className="text-white font-semibold mb-6">Legal</h4>
           <ul className="space-y-4 text-sm">
-            <li><a href="#" className="hover:text-blue-400 transition-colors">Privacy Policy</a></li>
-            <li><a href="#" className="hover:text-blue-400 transition-colors">Terms of Service</a></li>
-            <li><a href="#" className="hover:text-blue-400 transition-colors">BAA Agreement</a></li>
-            <li><a href="#" className="hover:text-blue-400 transition-colors">Status</a></li>
+            {legalLinks.map((link, i) => (
+              <li
+                key={i}
+                className={`transition-all duration-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}
+                style={{ transitionDelay: `${400 + i * 50}ms` }}
+              >
+                <a href={link.href} className="hover:text-blue-400 transition-colors duration-300">{link.name}</a>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+      {/* Bottom Bar */}
+      <div
+        className={`max-w-7xl mx-auto pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4 text-sm transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+        style={{ transitionDelay: '500ms' }}
+      >
         <p>© 2025 NFCura Inc. All rights reserved.</p>
-        <p>System Status: <span className="text-emerald-500 font-medium">Operational</span></p>
+        <p>
+          System Status: <span className="text-emerald-500 font-medium animate-pulse">Operational</span>
+        </p>
       </div>
     </footer>
   );

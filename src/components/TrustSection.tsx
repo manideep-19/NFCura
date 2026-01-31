@@ -1,47 +1,65 @@
 import { ShieldCheck, Lock, Globe, Server } from 'lucide-react';
+import { useReveal } from '../hooks/useReveal';
 
 export default function TrustSection() {
+  const [sectionRef, isVisible] = useReveal<HTMLElement>({ threshold: 0.15 });
+
+  const badges = [
+    { icon: ShieldCheck, text: "HIPAA Compliant" },
+    { icon: Lock, text: "SOC2 Ready" },
+    { icon: Globe, text: "GDPR Standards" },
+    { icon: Server, text: "256-bit Encryption" }
+  ];
+
+  const features = [
+    "Doctors can cancel or renew prescriptions anytime",
+    "Pharmacies cannot modify prescribed dosage",
+    "Patients control access to their records",
+    "Every action is logged and traceable"
+  ];
+
   return (
-    <section className="py-20 px-6 bg-slate-50 border-t border-slate-200">
+    <section ref={sectionRef} className="py-20 px-6 bg-slate-50 border-t border-slate-200 overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
+        {/* Header */}
+        <div
+          className={`text-center mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+        >
           <h2 className="text-sm font-bold text-slate-500 uppercase tracking-widest mb-2">Enterprise Standards</h2>
-          <h3 className="text-3xl font-bold text-slate-900">Security & Compliance First</h3>
+          <h3 className="font-display text-2xl md:text-3xl font-bold text-slate-900 uppercase">Security & Compliance First</h3>
         </div>
 
+        {/* Security Badges Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
-          {[
-            { icon: ShieldCheck, text: "HIPAA Compliant" },
-            { icon: Lock, text: "SOC2 Ready" },
-            { icon: Globe, text: "GDPR Standards" },
-            { icon: Server, text: "256-bit Encryption" }
-          ].map((item, i) => (
-            <div key={i} className="flex flex-col items-center justify-center gap-4 p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+          {badges.map((item, i) => (
+            <div
+              key={i}
+              className={`flex flex-col items-center justify-center gap-4 p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              style={{ transitionDelay: `${200 + i * 100}ms` }}
+            >
               <item.icon className="w-8 h-8 text-slate-400" strokeWidth={1.5} />
               <span className="font-semibold text-slate-700">{item.text}</span>
             </div>
           ))}
         </div>
 
-        <div className="bg-white rounded-3xl p-8 md:p-12 border border-slate-200">
+        {/* Security Features Card */}
+        <div
+          className={`bg-white rounded-3xl p-8 md:p-12 border border-slate-200 transition-all duration-700 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
+          style={{ transitionDelay: '400ms' }}
+        >
           <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-8 text-center">Plain Language Security</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <div className="flex items-start gap-4">
-              <div className="w-1.5 h-1.5 rounded-full bg-slate-900 mt-2.5 flex-shrink-0" />
-              <p className="text-slate-600 font-medium">Doctors can cancel or renew prescriptions anytime</p>
-            </div>
-            <div className="flex items-start gap-4">
-              <div className="w-1.5 h-1.5 rounded-full bg-slate-900 mt-2.5 flex-shrink-0" />
-              <p className="text-slate-600 font-medium">Pharmacies cannot modify prescribed dosage</p>
-            </div>
-            <div className="flex items-start gap-4">
-              <div className="w-1.5 h-1.5 rounded-full bg-slate-900 mt-2.5 flex-shrink-0" />
-              <p className="text-slate-600 font-medium">Patients control access to their records</p>
-            </div>
-            <div className="flex items-start gap-4">
-              <div className="w-1.5 h-1.5 rounded-full bg-slate-900 mt-2.5 flex-shrink-0" />
-              <p className="text-slate-600 font-medium">Every action is logged and traceable</p>
-            </div>
+            {features.map((text, i) => (
+              <div
+                key={i}
+                className={`flex items-start gap-4 transition-all duration-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}
+                style={{ transitionDelay: `${600 + i * 100}ms` }}
+              >
+                <div className="w-1.5 h-1.5 rounded-full bg-slate-900 mt-2.5 flex-shrink-0" />
+                <p className="text-slate-600 font-medium">{text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

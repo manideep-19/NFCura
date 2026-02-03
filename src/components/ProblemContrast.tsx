@@ -5,17 +5,21 @@ export default function ProblemContrast() {
     const [sectionRef, isVisible] = useReveal<HTMLElement>({ threshold: 0.15 });
 
     const traditionalItems = [
-        "Paper prescriptions",
-        "Fragmented EMRs",
-        "No pharmacy accountability",
-        "Editable PDFs"
+        "Prescriptions stop at paper or PDFs",
+        "No visibility after the doctor visit",
+        "Pharmacies dispense with no feedback loop",
+        "Labs, pharmacies, and insurers work in silos",
+        "Small medical expenses go unclaimed",
+        "Patients skip treatment due to cost friction"
     ];
 
     const nfcuraItems = [
-        "Immutable prescriptions",
-        "Unified patient timeline",
-        "Verified dispensing",
-        "Tamper-proof audit trail"
+        "One prescription, tracked end-to-end",
+        "Doctor → Pharmacy/Lab → Patient connected",
+        "Verified dispensing & test completion",
+        "Unified treatment timeline per patient",
+        "Tamper-proof audit trail (claim-ready)",
+        "Built for OPD care, not hospital IT"
     ];
 
     return (
@@ -38,7 +42,7 @@ export default function ProblemContrast() {
                     >
                         <h3 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3">
                             <span className="w-2 h-8 bg-red-400 rounded-full" />
-                            Traditional Systems
+                            Today's Reality
                         </h3>
 
                         <ul className="space-y-6">
@@ -70,7 +74,7 @@ export default function ProblemContrast() {
 
                         <h3 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3">
                             <span className="w-2 h-8 bg-[#D4F26A] rounded-full" />
-                            NFCura Network
+                            NFCura Closed-Loop Network
                         </h3>
 
                         <ul className="space-y-6 relative z-10">
@@ -88,6 +92,16 @@ export default function ProblemContrast() {
                             ))}
                         </ul>
                     </div>
+                </div>
+
+                {/* Micro-caption */}
+                <div
+                    className={`mt-12 text-center transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+                    style={{ transitionDelay: '900ms' }}
+                >
+                    <p className="text-slate-600 text-sm md:text-base max-w-3xl mx-auto">
+                        NFCura doesn't replace hospitals or EMRs — it connects what already exists into a single source of truth.
+                    </p>
                 </div>
             </div>
         </section>

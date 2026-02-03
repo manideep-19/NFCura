@@ -1,4 +1,4 @@
-import { CreditCard, FileText, ShieldCheck, Smartphone, UserPlus, FileCheck, MapPin, Eye, Lock, Clock, Heart, CheckCircle, Smartphone as MobileIcon, Info } from 'lucide-react';
+import { CreditCard, FileText, ShieldCheck, Smartphone, UserPlus, FileCheck, MapPin, Eye, Lock, Clock, Heart, CheckCircle, Smartphone as MobileIcon } from 'lucide-react';
 import { useReveal } from '../hooks/useReveal';
 
 export default function PatientSection() {
@@ -7,7 +7,6 @@ export default function PatientSection() {
   const [stepsRef, stepsVisible] = useReveal<HTMLDivElement>({ threshold: 0.1 });
   const [scenariosRef, scenariosVisible] = useReveal<HTMLDivElement>({ threshold: 0.1 });
   const [controlRef, controlVisible] = useReveal<HTMLDivElement>({ threshold: 0.1 });
-  const [statusRef, statusVisible] = useReveal<HTMLDivElement>({ threshold: 0.1 });
 
   return (
     <section className="py-32 px-6 bg-slate-50">
@@ -150,7 +149,7 @@ export default function PatientSection() {
         </div>
 
         {/* Control, Safety, and Timeline */}
-        <div ref={controlRef} className="grid md:grid-cols-3 gap-8 mb-24">
+        <div ref={controlRef} className="grid md:grid-cols-3 gap-8 mb-2">
           {/* Control */}
           <div
             className={`bg-slate-100 rounded-3xl p-8 transition-all duration-700 hover:shadow-lg ${controlVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}
@@ -235,21 +234,6 @@ export default function PatientSection() {
           </div>
         </div>
 
-        {/* Availability Status */}
-        <div
-          ref={statusRef}
-          className={`bg-white rounded-2xl p-6 border border-slate-200 flex flex-col md:flex-row items-center gap-6 max-w-3xl mx-auto text-center md:text-left shadow-sm transition-all duration-700 ${statusVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
-        >
-          <div className="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center shrink-0">
-            <Info className="w-5 h-5 text-emerald-600" />
-          </div>
-          <div>
-            <h4 className="text-lg font-bold text-slate-900 mb-1">Availability Status</h4>
-            <p className="text-slate-600 text-sm leading-relaxed">
-              The NFCura patient experience is currently part of a controlled rollout with participating clinics, pharmacies, and diagnostic labs. Access expands as more providers join the network.
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );

@@ -7,23 +7,23 @@ export default function HowItWorks() {
   const steps = [
     {
       icon: FileText,
-      title: "Check Profile",
-      desc: "Provider verifies patient identity."
+      title: "Digital Prescription Issued",
+      desc: "Structured, tamper-proof prescription linked to Health ID."
     },
     {
       icon: Link,
-      title: "Request Consult",
-      desc: "Secure link established for diagnosis."
+      title: "Unified Patient Timeline",
+      desc: "Longitudinal record accessible across providers with consent."
     },
     {
       icon: ShieldCheck,
-      title: "Schedule",
-      desc: "Meeting scheduled on the blockchain."
+      title: "Verified Fulfillment",
+      desc: "Every dispense and test logged — fully traceable."
     },
     {
       icon: CheckCircle,
-      title: "Get Solution",
-      desc: "Prescription fulfilled & verified."
+      title: "Audit- & Claim-Ready Records",
+      desc: "Verifiable records for accountability and insurance claims."
     }
   ];
 
@@ -34,9 +34,9 @@ export default function HowItWorks() {
         <div
           className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
         >
-          <h2 className="font-display text-2xl md:text-4xl font-bold text-slate-900 mb-6 uppercase">4 Easy Steps to Health</h2>
+          <h2 className="font-display text-2xl md:text-4xl font-bold text-slate-900 mb-6 uppercase">From Prescription to Proof — One Closed Loop</h2>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto font-light">
-            Navigating Health Together: Your Trusted Medical Resource. Medicine Meets Technology.
+            NFCura connects doctors, patients, pharmacies, and labs into a single verifiable treatment chain — built for real-world OPD care.
           </p>
         </div>
 
@@ -71,6 +71,16 @@ export default function HowItWorks() {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Micro-line for VCs */}
+        <div
+          className={`mt-12 text-center transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+          style={{ transitionDelay: '1100ms' }}
+        >
+          <p className="text-slate-600 text-base md:text-lg max-w-3xl mx-auto font-medium">
+            NFCura doesn't just digitize care — it makes healthcare accountable after the doctor visit.
+          </p>
         </div>
       </div>
     </section>

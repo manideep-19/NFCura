@@ -15,7 +15,7 @@ export default function Hero({ onExplore }: HeroProps) {
   }, []);
 
   return (
-    <section className="pt-2 pb-12 px-4 md:px-6 lg:px-8 max-w-[1440px] mx-auto">
+    <section className="pt-24 pb-12 px-4 md:px-6 lg:px-8 max-w-[1440px] mx-auto">
       <div className="bg-[#F0F4F8] rounded-[2.5rem] p-8 md:p-12 lg:p-16 relative overflow-hidden shadow-sm">
 
         {/* Background Elements - Animated */}
@@ -30,13 +30,13 @@ export default function Hero({ onExplore }: HeroProps) {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 relative z-10">
 
           {/* Left Content */}
-          <div className="text-center lg:text-left lg:max-w-xl">
+          <div className="text-center lg:text-left lg:max-w-xl lg:-mt-48">
 
 
 
             {/* Main Heading */}
             <h1
-              className={`font-display text-4xl md:text-5xl lg:text-[3.5rem] font-black text-slate-900 mb-6 leading-[1.05] uppercase tracking-tight transition-all duration-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              className={`font-display text-4xl md:text-5xl lg:text-[3.5rem] font-black text-slate-900 mb-4 leading-[1.05] uppercase tracking-tight transition-all duration-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
               style={{ transitionDelay: '350ms' }}
             >
               Empowering Lives Through{' '}
@@ -45,7 +45,7 @@ export default function Hero({ onExplore }: HeroProps) {
 
             {/* Subheading */}
             <p
-              className={`text-lg md:text-xl text-slate-600 mb-10 leading-relaxed transition-all duration-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              className={`text-lg md:text-xl text-slate-600 mb-8 leading-relaxed transition-all duration-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
               style={{ transitionDelay: '500ms' }}
             >
               Navigating Health Together: Your Trusted Medical Resource. NFCura unifies prescriptions and identity into one immutable chain of trust.
@@ -53,7 +53,7 @@ export default function Hero({ onExplore }: HeroProps) {
 
             {/* CTA Buttons */}
             <div
-              className={`flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4 mb-12 transition-all duration-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              className={`flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4 mb-8 transition-all duration-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
               style={{ transitionDelay: '650ms' }}
             >
               <button

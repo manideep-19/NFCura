@@ -34,21 +34,21 @@ export default function HowItWorks() {
         <div
           className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
         >
-          <h2 className="font-display text-2xl md:text-4xl font-bold text-slate-900 mb-6 uppercase">From Prescription to Proof — One Closed Loop</h2>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto font-light">
+          <h2 className="font-display text-2xl md:text-4xl font-bold text-white mb-6 uppercase">From Prescription to Proof — One Closed Loop</h2>
+          <p className="text-xl text-slate-400 max-w-2xl mx-auto font-light">
             NFCura connects doctors, patients, pharmacies, and labs into a single verifiable treatment chain — built for real-world OPD care.
           </p>
         </div>
 
         {/* Steps Card */}
         <div
-          className={`bg-white rounded-[2.5rem] p-8 md:p-12 shadow-sm border border-slate-100 transition-all duration-700 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
+          className={`bg-white/5 rounded-[2.5rem] p-8 md:p-12 shadow-2xl border border-white/10 backdrop-blur-md transition-all duration-700 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
           style={{ transitionDelay: '200ms' }}
         >
           <div className="grid md:grid-cols-4 gap-8 relative">
             {/* Connecting Line - Animated */}
             <div
-              className={`hidden md:block absolute top-[2.5rem] left-10 right-10 h-[2px] bg-gradient-to-r from-blue-100 via-blue-200 to-blue-100 transition-all duration-1000 origin-left ${isVisible ? 'scale-x-100' : 'scale-x-0'}`}
+              className={`hidden md:block absolute top-[2.5rem] left-10 right-10 h-[2px] bg-gradient-to-r from-white/5 via-white/20 to-white/5 transition-all duration-1000 origin-left ${isVisible ? 'scale-x-100' : 'scale-x-0'}`}
               style={{ transitionDelay: '500ms' }}
             />
 
@@ -59,15 +59,15 @@ export default function HowItWorks() {
                 style={{ transitionDelay: `${400 + i * 150}ms` }}
               >
                 {/* Icon Circle */}
-                <div className="w-20 h-20 rounded-full bg-slate-50 border-4 border-white shadow-lg flex items-center justify-center mb-6 relative z-10 group-hover:bg-primary-500 transition-all duration-500">
+                <div className="w-20 h-20 rounded-full bg-dark-900 border-4 border-white/10 shadow-2xl flex items-center justify-center mb-6 relative z-10 group-hover:bg-primary-500 transition-all duration-500">
                   <step.icon
-                    className="w-8 h-8 text-slate-400 group-hover:text-white transition-colors duration-300"
+                    className="w-8 h-8 text-white group-hover:text-white transition-colors duration-300"
                     strokeWidth={1.5}
                   />
                 </div>
 
-                <h3 className="text-lg font-bold text-slate-900 mb-2">{step.title}</h3>
-                <p className="text-slate-500 text-sm leading-relaxed max-w-[180px]">{step.desc}</p>
+                <h3 className="text-lg font-bold text-white mb-2">{step.title}</h3>
+                <p className="text-slate-400 text-sm leading-relaxed max-w-[180px]">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -78,7 +78,7 @@ export default function HowItWorks() {
           className={`mt-12 text-center transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
           style={{ transitionDelay: '1100ms' }}
         >
-          <p className="text-slate-600 text-base md:text-lg max-w-3xl mx-auto font-medium">
+          <p className="text-slate-500 text-base md:text-lg max-w-3xl mx-auto font-medium">
             NFCura doesn't just digitize care — it makes healthcare accountable after the doctor visit.
           </p>
         </div>

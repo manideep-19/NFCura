@@ -1,4 +1,4 @@
-import { Activity, Linkedin, ShieldCheck, Lock, FileText, X } from 'lucide-react';
+import { Linkedin, ShieldCheck, Lock, FileText, X } from 'lucide-react';
 import { useReveal } from '../hooks/useReveal';
 import { useState } from 'react';
 
@@ -79,7 +79,7 @@ export default function Footer() {
 
   return (
     <>
-      <footer ref={footerRef} className="bg-slate-950 text-slate-400 py-16 px-6 overflow-hidden">
+      <footer ref={footerRef} className="bg-white/5 border-t border-white/10 text-slate-400 py-16 px-6 overflow-hidden backdrop-blur-md">
         <div className="max-w-7xl mx-auto">
 
           {/* Main Footer Content */}
@@ -90,8 +90,8 @@ export default function Footer() {
               className={`col-span-1 md:col-span-1 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
             >
               <div className="flex items-center gap-2 mb-6">
-                <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
-                  <Activity className="w-5 h-5 text-white" />
+                <div className="w-10 h-10 rounded-full overflow-hidden border border-white/10 shadow-lg">
+                  <img src="/logo.jpg" alt="NFCura Logo" className="w-full h-full object-cover" />
                 </div>
                 <span className="text-xl font-bold text-white tracking-tight">NFCura</span>
               </div>
@@ -183,7 +183,7 @@ export default function Footer() {
 
           {/* Healthcare Disclaimer */}
           <div
-            className={`bg-slate-900/50 rounded-xl p-6 mb-8 border border-slate-800 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+            className={`bg-white/5 rounded-xl p-6 mb-8 border border-white/10 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
             style={{ transitionDelay: '400ms' }}
           >
             <div className="flex items-start gap-3">
@@ -226,7 +226,7 @@ export default function Footer() {
 
           {/* Bottom Bar */}
           <div
-            className={`pt-8 border-t border-slate-900 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+            className={`pt-8 border-t border-white/10 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
             style={{ transitionDelay: '500ms' }}
           >
             <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
@@ -261,11 +261,11 @@ export default function Footer() {
       {/* Modal */}
       {activeModal && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
           onClick={() => setActiveModal(null)}
         >
           <div
-            className="bg-slate-900 rounded-2xl max-w-2xl w-full max-h-[80vh] overflow-hidden shadow-2xl border border-slate-800"
+            className="bg-[#101010] rounded-2xl max-w-2xl w-full max-h-[80vh] overflow-hidden shadow-2xl border border-white/10"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}

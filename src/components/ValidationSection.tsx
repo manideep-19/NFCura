@@ -11,7 +11,7 @@ export default function ValidationSection() {
     ];
 
     return (
-        <section ref={sectionRef} className="py-20 px-6 bg-slate-900 text-white overflow-hidden">
+        <section ref={sectionRef} className="py-20 px-6 backdrop-blur-sm border-t border-white/5 text-white overflow-hidden">
             <div className="max-w-7xl mx-auto">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-12">
                     {/* Left - Title */}

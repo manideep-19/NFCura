@@ -38,18 +38,18 @@ export default function PharmacySection() {
   ];
 
   return (
-    <section className="py-32 px-6 bg-slate-50 overflow-hidden">
+    <section className="py-32 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
 
         {/* Hero Section */}
         <div ref={heroRef} className="text-center mb-20">
           <h2
-            className={`font-display text-2xl md:text-4xl font-bold text-slate-900 mb-6 uppercase transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            className={`font-display text-2xl md:text-4xl font-bold text-white mb-6 uppercase transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
           >
             Pharmacy / Lab Operations Suite
           </h2>
           <p
-            className={`text-xl text-slate-600 max-w-2xl mx-auto font-light transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            className={`text-xl text-slate-400 max-w-2xl mx-auto font-light transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
             style={{ transitionDelay: '100ms' }}
           >
             Optimize dispensing, lab test processing, and inventory management with direct digital prescription integration.
@@ -61,14 +61,14 @@ export default function PharmacySection() {
           {features.map((item, i) => (
             <div
               key={i}
-              className={`bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:border-green-400 hover:shadow-lg transition-all duration-500 group hover:-translate-y-1 ${featuresVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+              className={`bg-white/5 p-8 rounded-3xl shadow-lg border border-white/10 hover:border-green-400/50 hover:bg-white/10 backdrop-blur-sm transition-all duration-500 group hover:-translate-y-1 ${featuresVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
               style={{ transitionDelay: `${i * 80}ms` }}
             >
-              <div className="w-12 h-12 rounded-xl bg-green-50 flex items-center justify-center mb-6 text-green-600 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-12 h-12 rounded-xl bg-green-500/20 flex items-center justify-center mb-6 text-green-400 group-hover:scale-110 transition-transform duration-300">
                 <item.icon className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-3">{item.title}</h3>
-              <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
+              <h3 className="text-lg font-bold text-white mb-3">{item.title}</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
@@ -76,7 +76,7 @@ export default function PharmacySection() {
         {/* How It Works */}
         <div ref={stepsRef} className="mb-32">
           <h3
-            className={`text-2xl font-bold text-slate-900 mb-12 border-l-4 border-green-500 pl-4 transition-all duration-700 ${stepsVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}
+            className={`text-2xl font-bold text-white mb-12 border-l-4 border-green-500 pl-4 transition-all duration-700 ${stepsVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}
           >
             How NFCura fits into daily pharmacy & lab operations
           </h3>
@@ -84,14 +84,14 @@ export default function PharmacySection() {
             {workflowSteps.map((step, i) => (
               <div
                 key={i}
-                className={`flex flex-col items-start bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all duration-500 hover:-translate-y-1 ${stepsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                className={`flex flex-col items-start bg-white/5 p-6 rounded-2xl border border-white/10 shadow-lg backdrop-blur-sm hover:bg-white/10 transition-all duration-500 hover:-translate-y-1 ${stepsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                 style={{ transitionDelay: `${100 + i * 100}ms` }}
               >
-                <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center mb-4 text-slate-600">
+                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center mb-4 text-slate-300">
                   <step.icon className="w-5 h-5" />
                 </div>
-                <h4 className="text-lg font-bold text-slate-900 mb-2">{step.title}</h4>
-                <p className="text-slate-600 text-sm leading-relaxed">{step.desc}</p>
+                <h4 className="text-lg font-bold text-white mb-2">{step.title}</h4>
+                <p className="text-slate-400 text-sm leading-relaxed">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -100,7 +100,7 @@ export default function PharmacySection() {
         {/* Why Trust NFCura */}
         <div ref={trustRef} className="mb-32">
           <h3
-            className={`text-2xl font-bold text-slate-900 mb-12 border-l-4 border-blue-500 pl-4 transition-all duration-700 ${trustVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}
+            className={`text-2xl font-bold text-white mb-12 border-l-4 border-blue-500 pl-4 transition-all duration-700 ${trustVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}
           >
             Why Pharmacists & Labs Trust NFCura
           </h3>
@@ -108,14 +108,14 @@ export default function PharmacySection() {
             {trustReasons.map((item, i) => (
               <div
                 key={i}
-                className={`bg-white p-8 rounded-2xl border border-slate-200 hover:shadow-lg transition-all duration-500 hover:-translate-y-1 ${trustVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                className={`bg-white/5 p-8 rounded-2xl border border-white/10 hover:bg-white/10 backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 ${trustVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <item.icon className="w-6 h-6 text-blue-600" />
-                  <h4 className="text-lg font-bold text-slate-900">{item.title}</h4>
+                  <item.icon className="w-6 h-6 text-blue-400" />
+                  <h4 className="text-lg font-bold text-white">{item.title}</h4>
                 </div>
-                <ul className="space-y-2 text-slate-600 text-sm">
+                <ul className="space-y-2 text-slate-400 text-sm">
                   {item.points.map((point, j) => (
                     <li key={j} className="flex items-start gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2" />
@@ -131,7 +131,7 @@ export default function PharmacySection() {
         {/* Real Scenarios */}
         <div ref={scenariosRef} className="mb-32">
           <h3
-            className={`text-2xl font-bold text-slate-900 mb-12 border-l-4 border-slate-500 pl-4 transition-all duration-700 ${scenariosVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}
+            className={`text-2xl font-bold text-white mb-12 border-l-4 border-slate-500 pl-4 transition-all duration-700 ${scenariosVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}
           >
             Designed for real pharmacy & lab scenarios
           </h3>
@@ -143,11 +143,11 @@ export default function PharmacySection() {
             ].map((item, i) => (
               <div
                 key={i}
-                className={`p-6 bg-slate-100 rounded-xl hover:shadow-md transition-all duration-500 hover:-translate-y-1 ${scenariosVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                className={`p-6 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 ${scenariosVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
-                <h4 className="font-bold text-slate-900 mb-2">{item.title}</h4>
-                <p className="text-sm text-slate-700 font-medium mb-1">{item.situation}</p>
+                <h4 className="font-bold text-white mb-2">{item.title}</h4>
+                <p className="text-sm text-slate-300 font-medium mb-1">{item.situation}</p>
                 <p className="text-sm text-slate-500">{item.outcome}</p>
               </div>
             ))}
@@ -159,7 +159,7 @@ export default function PharmacySection() {
           <div
             className={`transition-all duration-700 ${accessVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}
           >
-            <h3 className="text-2xl font-bold text-slate-900 mb-6 border-l-4 border-purple-500 pl-4">Controlled access by design</h3>
+            <h3 className="text-2xl font-bold text-white mb-6 border-l-4 border-purple-500 pl-4">Controlled access by design</h3>
             <div className="space-y-6">
               {accessPoints.map((text, i) => (
                 <div
@@ -167,10 +167,10 @@ export default function PharmacySection() {
                   className={`flex items-start gap-4 transition-all duration-500 ${accessVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}
                   style={{ transitionDelay: `${200 + i * 80}ms` }}
                 >
-                  <div className="mt-1 min-w-5 min-h-5 rounded-full bg-purple-100 flex items-center justify-center">
-                    <Lock className="w-3 h-3 text-purple-600" />
+                  <div className="mt-1 min-w-5 min-h-5 rounded-full bg-purple-500/20 flex items-center justify-center">
+                    <Lock className="w-3 h-3 text-purple-400" />
                   </div>
-                  <p className="text-slate-700">{text}</p>
+                  <p className="text-slate-300">{text}</p>
                 </div>
               ))}
             </div>
@@ -180,10 +180,10 @@ export default function PharmacySection() {
             className={`hidden md:flex justify-center transition-all duration-700 ${accessVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}
             style={{ transitionDelay: '200ms' }}
           >
-            <div className="w-64 h-64 bg-slate-50 rounded-full flex items-center justify-center border-4 border-white shadow-xl relative">
-              <Server className="w-24 h-24 text-slate-300" />
+            <div className="w-64 h-64 bg-white/5 rounded-full flex items-center justify-center border-4 border-white/10 shadow-2xl relative backdrop-blur-sm">
+              <Server className="w-24 h-24 text-slate-600" />
               <div
-                className={`absolute top-0 right-0 p-4 bg-white rounded-xl shadow-lg transition-all duration-500 ${accessVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}
+                className={`absolute top-0 right-0 p-4 bg-[#101010] rounded-xl shadow-lg border border-white/10 transition-all duration-500 ${accessVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}
                 style={{ transitionDelay: '500ms' }}
               >
                 <Lock className="w-6 h-6 text-green-500" />
@@ -195,18 +195,18 @@ export default function PharmacySection() {
         {/* Deployment Status */}
         <div
           ref={statusRef}
-          className={`bg-slate-50 rounded-2xl p-8 border border-slate-200 text-center md:text-left flex flex-col md:flex-row items-center gap-6 transition-all duration-700 ${statusVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
+          className={`bg-white/5 rounded-2xl p-8 border border-white/10 backdrop-blur-sm text-center md:text-left flex flex-col md:flex-row items-center gap-6 transition-all duration-700 ${statusVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
         >
-          <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center shrink-0">
-            <Info className="w-6 h-6 text-blue-600" />
+          <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center shrink-0">
+            <Info className="w-6 h-6 text-blue-400" />
           </div>
           <div>
-            <h4 className="text-lg font-bold text-slate-900 mb-1">Deployment Status</h4>
-            <p className="text-slate-600 mb-2 leading-relaxed">
+            <h4 className="text-lg font-bold text-white mb-1">Deployment Status</h4>
+            <p className="text-slate-400 mb-2 leading-relaxed">
               NFCura's pharmacy & lab module is currently in controlled rollout and validation phase. We are working with pharmacies and diagnostic labs to refine dispensing, testing workflows, and compliance requirements before wider adoption.
             </p>
             <p
-              className={`text-sm text-slate-400 italic transition-all duration-500 ${statusVisible ? 'opacity-100' : 'opacity-0'}`}
+              className={`text-sm text-slate-500 italic transition-all duration-500 ${statusVisible ? 'opacity-100' : 'opacity-0'}`}
               style={{ transitionDelay: '300ms' }}
             >
               Partner access is available upon request.

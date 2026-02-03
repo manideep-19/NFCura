@@ -13,15 +13,15 @@ export default function Header() {
       <div className="max-w-7xl mx-auto flex items-center justify-center transition-all duration-300">
 
         {/* Navigation - Pill Style with Capsule Border */}
-        <nav className="flex items-center gap-1 p-1 rounded-full overflow-x-auto max-w-full no-scrollbar bg-white/80 backdrop-blur-lg border border-slate-200/60 shadow-lg shadow-black/5">
+        <nav className="flex items-center gap-1 p-1 rounded-full overflow-x-auto max-w-full no-scrollbar bg-white/5 backdrop-blur-lg border border-white/10 shadow-lg shadow-black/5">
           {navLinks.map((link) => (
             <NavLink
               key={link.name}
               to={link.path}
               className={({ isActive }) =>
                 `px-3 py-1.5 md:px-6 md:py-2 rounded-full text-xs md:text-sm font-medium whitespace-nowrap transition-all duration-300 ${isActive
-                  ? 'bg-white text-slate-900 shadow-sm ring-1 ring-black/5'
-                  : 'text-slate-500 hover:text-slate-900 hover:bg-white/50'
+                  ? 'bg-white/10 text-white shadow-sm ring-1 ring-white/20'
+                  : 'text-slate-400 hover:text-white hover:bg-white/5'
                 }`
               }
             >

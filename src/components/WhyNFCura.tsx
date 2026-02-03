@@ -36,13 +36,13 @@ export default function WhyNFCura() {
   ];
 
   return (
-    <section ref={sectionRef} className="py-24 px-6 bg-slate-900 text-white overflow-hidden">
+    <section ref={sectionRef} className="py-24 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div
           className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
         >
-          <h2 className="font-display text-2xl md:text-4xl font-bold mb-6 tracking-tight uppercase">The Intelligent Ecosystem</h2>
+          <h2 className="font-display text-2xl md:text-4xl font-bold mb-6 tracking-tight uppercase text-white">The Intelligent Ecosystem</h2>
           <p className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed font-light">
             Eliminating fragmentation in healthcare delivery through a unified, cryptographically verifiable protocol.
           </p>
@@ -53,14 +53,14 @@ export default function WhyNFCura() {
           {features.map((item, i) => (
             <div
               key={i}
-              className={`flex items-start gap-6 p-8 rounded-3xl bg-slate-800/50 border border-slate-700/50 hover:bg-slate-800 hover:border-slate-600 transition-all duration-500 group ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+              className={`flex items-start gap-6 p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-white/20 hover:bg-white/10 backdrop-blur-sm transition-all duration-500 group ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
               style={{ transitionDelay: `${200 + i * 100}ms` }}
             >
               <div className={`w-14 h-14 rounded-2xl ${item.bg} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
                 <item.icon className={`w-7 h-7 ${item.color}`} />
               </div>
               <div>
-                <h3 className="text-xl font-bold mb-3">{item.title}</h3>
+                <h3 className="text-xl font-bold mb-3 text-white">{item.title}</h3>
                 <p className="text-slate-400 leading-relaxed font-light">{item.desc}</p>
               </div>
             </div>

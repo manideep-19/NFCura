@@ -45,18 +45,18 @@ export default function DoctorSection() {
   ];
 
   return (
-    <section className="py-32 px-6 bg-white overflow-hidden">
+    <section className="py-32 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
 
         {/* Hero Section */}
         <div ref={heroRef} className="text-center mb-20">
           <h2
-            className={`font-display text-2xl md:text-4xl font-bold text-slate-900 mb-6 uppercase transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            className={`font-display text-2xl md:text-4xl font-bold text-white mb-6 uppercase transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
           >
             Clinical Efficiency Engine
           </h2>
           <p
-            className={`text-xl text-slate-600 max-w-3xl mx-auto font-light mb-4 transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            className={`text-xl text-slate-400 max-w-3xl mx-auto font-light mb-4 transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
             style={{ transitionDelay: '100ms' }}
           >
             A closed-loop digital prescribing system that eliminates ambiguity, reduces risk, and gives doctors real-time visibility into treatment outcomes.
@@ -74,15 +74,15 @@ export default function DoctorSection() {
           {capabilities.map((item, i) => (
             <div
               key={i}
-              className={`p-8 rounded-3xl bg-white border border-slate-100 hover:border-slate-300 hover:shadow-xl transition-all duration-500 group ${capabilitiesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+              className={`p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-white/20 hover:bg-white/10 backdrop-blur-sm transition-all duration-500 group ${capabilitiesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
               style={{ transitionDelay: `${i * 100}ms` }}
             >
-              <div className={`w-14 h-14 rounded-2xl ${item.bg} flex items-center justify-center mb-6 ${item.color} group-hover:scale-110 transition-transform duration-300`}>
+              <div className={`w-14 h-14 rounded-2xl ${item.bg === 'bg-teal-50' ? 'bg-teal-500/20 text-teal-400' : item.bg === 'bg-blue-50' ? 'bg-blue-500/20 text-blue-400' : 'bg-indigo-500/20 text-indigo-400'} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                 <item.icon className="w-7 h-7" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-4">{item.title}</h3>
-              <p className="text-slate-600 leading-relaxed font-light mb-3">{item.desc}</p>
-              <p className="text-sm text-slate-500 leading-relaxed italic border-l-2 border-slate-200 pl-3">{item.impact}</p>
+              <h3 className="text-xl font-bold text-white mb-4">{item.title}</h3>
+              <p className="text-slate-400 leading-relaxed font-light mb-3">{item.desc}</p>
+              <p className="text-sm text-slate-500 leading-relaxed italic border-l-2 border-white/10 pl-3">{item.impact}</p>
             </div>
           ))}
         </div>
@@ -90,7 +90,7 @@ export default function DoctorSection() {
         {/* Consultation Flow */}
         <div ref={flowRef} className="mb-32">
           <h3
-            className={`text-2xl font-bold text-slate-900 mb-12 border-l-4 border-teal-500 pl-4 transition-all duration-700 ${flowVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}
+            className={`text-2xl font-bold text-white mb-12 border-l-4 border-teal-500 pl-4 transition-all duration-700 ${flowVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}
           >
             How NFCura fits into a doctor's consultation flow
           </h3>
@@ -98,15 +98,15 @@ export default function DoctorSection() {
             {consultationFlow.map((step, i) => (
               <div
                 key={i}
-                className={`flex flex-col items-start bg-slate-50 p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all duration-500 hover:-translate-y-1 ${flowVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                className={`flex flex-col items-start bg-white/5 p-6 rounded-2xl border border-white/10 shadow-lg backdrop-blur-sm hover:bg-white/10 transition-all duration-500 hover:-translate-y-1 ${flowVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                 style={{ transitionDelay: `${100 + i * 100}ms` }}
               >
-                <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center mb-4 text-teal-600 shadow-sm">
+                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center mb-4 text-teal-400 shadow-sm">
                   <step.icon className="w-5 h-5" />
                 </div>
-                <h4 className="text-lg font-bold text-slate-900 mb-1">{step.title}</h4>
-                {step.time && <p className="text-xs text-teal-600 font-semibold mb-2">{step.time}</p>}
-                <p className="text-slate-600 text-sm leading-relaxed">{step.desc}</p>
+                <h4 className="text-lg font-bold text-white mb-1">{step.title}</h4>
+                {step.time && <p className="text-xs text-teal-400 font-semibold mb-2">{step.time}</p>}
+                <p className="text-slate-400 text-sm leading-relaxed">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -115,7 +115,7 @@ export default function DoctorSection() {
         {/* Clinical Safety */}
         <div ref={safetyRef} className="mb-32">
           <h3
-            className={`text-2xl font-bold text-slate-900 mb-12 border-l-4 border-blue-500 pl-4 transition-all duration-700 ${safetyVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}
+            className={`text-2xl font-bold text-white mb-12 border-l-4 border-blue-500 pl-4 transition-all duration-700 ${safetyVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}
           >
             Clinical Safety & Risk Reduction
           </h3>
@@ -127,15 +127,15 @@ export default function DoctorSection() {
             ].map((item, i) => (
               <div
                 key={i}
-                className={`bg-white p-8 rounded-2xl border border-slate-200 hover:shadow-lg transition-all duration-500 ${safetyVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                className={`bg-white/5 p-8 rounded-2xl border border-white/10 hover:bg-white/10 backdrop-blur-sm transition-all duration-500 ${safetyVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <item.icon className="w-6 h-6 text-blue-600" />
-                  <h4 className="text-lg font-bold text-slate-900">{item.title}</h4>
+                  <item.icon className="w-6 h-6 text-blue-400" />
+                  <h4 className="text-lg font-bold text-white">{item.title}</h4>
                 </div>
                 <p className="text-sm text-slate-500 italic mb-4">{item.rationale}</p>
-                <ul className="space-y-2 text-slate-600 text-sm">
+                <ul className="space-y-2 text-slate-400 text-sm">
                   {item.points.map((point, j) => (
                     <li key={j} className="flex items-start gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2" />
@@ -151,7 +151,7 @@ export default function DoctorSection() {
         {/* Real Clinical Scenarios */}
         <div ref={scenariosRef} className="mb-32">
           <h3
-            className={`text-2xl font-bold text-slate-900 mb-12 border-l-4 border-slate-500 pl-4 transition-all duration-700 ${scenariosVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}
+            className={`text-2xl font-bold text-white mb-12 border-l-4 border-slate-500 pl-4 transition-all duration-700 ${scenariosVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}
           >
             Designed for real clinical practice
           </h3>
@@ -163,15 +163,15 @@ export default function DoctorSection() {
             ].map((item, i) => (
               <div
                 key={i}
-                className={`p-6 bg-slate-50 rounded-xl border border-slate-100 hover:shadow-md transition-all duration-500 hover:-translate-y-1 ${scenariosVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                className={`p-6 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 ${scenariosVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
                 <div className="flex items-center gap-2 mb-3">
                   <Stethoscope className="w-5 h-5 text-slate-400" />
-                  <h4 className="font-bold text-slate-900">{item.scenario}</h4>
+                  <h4 className="font-bold text-white">{item.scenario}</h4>
                 </div>
-                <p className="text-sm text-slate-600 leading-relaxed mb-2">{item.situation}</p>
-                <p className="text-xs text-teal-600 font-semibold">{item.outcome}</p>
+                <p className="text-sm text-slate-400 leading-relaxed mb-2">{item.situation}</p>
+                <p className="text-xs text-teal-400 font-semibold">{item.outcome}</p>
               </div>
             ))}
           </div>
@@ -183,8 +183,8 @@ export default function DoctorSection() {
           <div
             className={`transition-all duration-700 ${adminVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}
           >
-            <h3 className="text-2xl font-bold text-slate-900 mb-4 border-l-4 border-indigo-500 pl-4">Less administration, more care</h3>
-            <p className="text-sm text-slate-500 mb-6">NFCura reduces non-clinical overhead without adding steps to consultation flow.</p>
+            <h3 className="text-2xl font-bold text-white mb-4 border-l-4 border-indigo-500 pl-4">Less administration, more care</h3>
+            <p className="text-sm text-slate-400 mb-6">NFCura reduces non-clinical overhead without adding steps to consultation flow.</p>
             <ul className="space-y-4">
               {[
                 "Reduced pharmacy callbacks",
@@ -197,10 +197,10 @@ export default function DoctorSection() {
               ].map((item, i) => (
                 <li
                   key={i}
-                  className={`flex items-center gap-3 text-slate-700 transition-all duration-500 ${adminVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}
+                  className={`flex items-center gap-3 text-slate-300 transition-all duration-500 ${adminVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}
                   style={{ transitionDelay: `${200 + i * 60}ms` }}
                 >
-                  <Timer className="w-5 h-5 text-indigo-500" />
+                  <Timer className="w-5 h-5 text-indigo-400" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -212,10 +212,10 @@ export default function DoctorSection() {
             className={`transition-all duration-700 ${adminVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}
             style={{ transitionDelay: '100ms' }}
           >
-            <h3 className="text-2xl font-bold text-slate-900 mb-4 border-l-4 border-purple-500 pl-4">Data access by clinical role</h3>
-            <p className="text-sm text-slate-500 mb-6">Access controls follow the principle of minimum necessary clinical data.</p>
-            <div className="bg-purple-50 rounded-2xl p-8 relative overflow-hidden">
-              <Shield className="absolute -right-6 -bottom-6 w-32 h-32 text-purple-100" />
+            <h3 className="text-2xl font-bold text-white mb-4 border-l-4 border-purple-500 pl-4">Data access by clinical role</h3>
+            <p className="text-sm text-slate-400 mb-6">Access controls follow the principle of minimum necessary clinical data.</p>
+            <div className="bg-purple-900/10 rounded-2xl p-8 relative overflow-hidden border border-purple-500/20">
+              <Shield className="absolute -right-6 -bottom-6 w-32 h-32 text-purple-500/10" />
               <ul className="space-y-4 relative z-10">
                 {[
                   "Doctors only access patients they consult",
@@ -226,10 +226,10 @@ export default function DoctorSection() {
                 ].map((item, i) => (
                   <li
                     key={i}
-                    className={`flex items-center gap-3 text-slate-700 transition-all duration-500 ${adminVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}
+                    className={`flex items-center gap-3 text-slate-300 transition-all duration-500 ${adminVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}
                     style={{ transitionDelay: `${300 + i * 60}ms` }}
                   >
-                    <Lock className="w-4 h-4 text-purple-600" />
+                    <Lock className="w-4 h-4 text-purple-400" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -241,14 +241,14 @@ export default function DoctorSection() {
         {/* Deployment Status */}
         <div
           ref={statusRef}
-          className={`bg-slate-50 rounded-2xl p-8 border border-slate-200 text-center md:text-left flex flex-col md:flex-row items-center gap-6 mb-12 transition-all duration-700 ${statusVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
+          className={`bg-white/5 rounded-2xl p-8 border border-white/10 backdrop-blur-sm text-center md:text-left flex flex-col md:flex-row items-center gap-6 mb-12 transition-all duration-700 ${statusVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
         >
-          <div className="w-12 h-12 rounded-full bg-teal-100 flex items-center justify-center shrink-0">
-            <Info className="w-6 h-6 text-teal-600" />
+          <div className="w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center shrink-0">
+            <Info className="w-6 h-6 text-teal-400" />
           </div>
           <div>
-            <h4 className="text-lg font-bold text-slate-900 mb-1">Clinical Deployment Status</h4>
-            <p className="text-slate-600 leading-relaxed">
+            <h4 className="text-lg font-bold text-white mb-1">Clinical Deployment Status</h4>
+            <p className="text-slate-400 leading-relaxed">
               NFCura's doctor module is currently in controlled pilot use, designed to integrate seamlessly into existing OPD workflows. Partner access is available for clinics participating in early deployment programs.
             </p>
           </div>

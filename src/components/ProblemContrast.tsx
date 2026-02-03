@@ -23,13 +23,13 @@ export default function ProblemContrast() {
     ];
 
     return (
-        <section ref={sectionRef} className="py-24 px-6 bg-white overflow-hidden">
+        <section ref={sectionRef} className="py-24 px-6 overflow-hidden">
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
                 <div
                     className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                 >
-                    <h2 className="font-display text-2xl md:text-3xl font-bold text-slate-900 mb-4 tracking-tight uppercase">
+                    <h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-4 tracking-tight uppercase">
                         Why Healthcare Still Breaks
                     </h2>
                 </div>
@@ -37,11 +37,11 @@ export default function ProblemContrast() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
                     {/* Traditional Systems - Slides from Left */}
                     <div
-                        className={`bg-red-50/50 rounded-3xl p-8 md:p-12 border border-red-100/50 transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}
+                        className={`bg-red-500/10 rounded-3xl p-8 md:p-12 border border-red-500/20 backdrop-blur-sm transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}
                         style={{ transitionDelay: '200ms' }}
                     >
-                        <h3 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3">
-                            <span className="w-2 h-8 bg-red-400 rounded-full" />
+                        <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+                            <span className="w-2 h-8 bg-red-500 rounded-full" />
                             Today's Reality
                         </h3>
 
@@ -49,11 +49,11 @@ export default function ProblemContrast() {
                             {traditionalItems.map((item, i) => (
                                 <li
                                     key={i}
-                                    className={`flex items-center gap-4 text-slate-700 transition-all duration-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-6'}`}
+                                    className={`flex items-center gap-4 text-slate-300 transition-all duration-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-6'}`}
                                     style={{ transitionDelay: `${400 + i * 100}ms` }}
                                 >
-                                    <div className="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0">
-                                        <X className="w-3.5 h-3.5 text-red-600" />
+                                    <div className="w-6 h-6 rounded-full bg-red-500/20 flex items-center justify-center flex-shrink-0">
+                                        <X className="w-3.5 h-3.5 text-red-500" />
                                     </div>
                                     <span className="font-medium">{item}</span>
                                 </li>
@@ -63,7 +63,7 @@ export default function ProblemContrast() {
 
                     {/* NFCura Network - Slides from Right */}
                     <div
-                        className={`bg-slate-50 rounded-3xl p-8 md:p-12 border border-slate-200 shadow-sm relative overflow-hidden transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}
+                        className={`bg-white/5 rounded-3xl p-8 md:p-12 border border-white/10 shadow-2xl backdrop-blur-sm relative overflow-hidden transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}
                         style={{ transitionDelay: '300ms' }}
                     >
                         {/* Glow effect - Animated */}
@@ -72,7 +72,7 @@ export default function ProblemContrast() {
                             style={{ transitionDelay: '600ms' }}
                         />
 
-                        <h3 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+                        <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
                             <span className="w-2 h-8 bg-[#D4F26A] rounded-full" />
                             NFCura Closed-Loop Network
                         </h3>
@@ -81,11 +81,11 @@ export default function ProblemContrast() {
                             {nfcuraItems.map((item, i) => (
                                 <li
                                     key={i}
-                                    className={`flex items-center gap-4 text-slate-900 transition-all duration-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-6'}`}
+                                    className={`flex items-center gap-4 text-white transition-all duration-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-6'}`}
                                     style={{ transitionDelay: `${500 + i * 100}ms` }}
                                 >
                                     <div className="w-6 h-6 rounded-full bg-[#D4F26A] flex items-center justify-center flex-shrink-0">
-                                        <Check className="w-3.5 h-3.5 text-slate-900" />
+                                        <Check className="w-3.5 h-3.5 text-black" />
                                     </div>
                                     <span className="font-semibold">{item}</span>
                                 </li>
@@ -99,7 +99,7 @@ export default function ProblemContrast() {
                     className={`mt-12 text-center transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
                     style={{ transitionDelay: '900ms' }}
                 >
-                    <p className="text-slate-600 text-sm md:text-base max-w-3xl mx-auto">
+                    <p className="text-slate-500 text-sm md:text-base max-w-3xl mx-auto">
                         NFCura doesn't replace hospitals or EMRs — it connects what already exists into a single source of truth.
                     </p>
                 </div>
